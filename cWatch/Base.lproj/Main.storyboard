@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9MX-Wr-4Is">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login In Page-->
+        <scene sceneID="3jV-E7-rRl">
+            <objects>
+                <viewController id="9MX-Wr-4Is" customClass="loginInPage" customModule="carbonize" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ImN-X4-PNM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="cEM-ou-6FC"/>
+                    </view>
+                    <connections>
+                        <outlet property="screenView" destination="ImN-X4-PNM" id="LpX-XH-YaP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSign" id="TFS-82-7VK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edp-NE-0bL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2029" y="-722"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="carbonize" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BDu-gx-VDF" appends="YES" id="sq2-1r-XBc"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="7NG-0F-4ld"/>
+                    <connections>
+                        <outlet property="screenFrame" destination="8bC-Xf-vdC" id="V3k-tC-4Sk"/>
+                        <segue destination="e8H-00-6Wb" kind="presentation" identifier="showPhotoTaken" id="Z2M-mU-Uwp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="BDu-gx-VDF">
+                    <connections>
+                        <segue destination="oLM-Sy-MFU" kind="show" id="58o-lo-4kZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1009" y="-713"/>
+        </scene>
+        <!--CarbonStatsPage-->
+        <scene sceneID="L7r-Ox-UvH">
+            <objects>
+                <viewController title="CarbonStatsPage" modalPresentationStyle="fullScreen" id="oLM-Sy-MFU" customClass="infoViewController" customModule="carbonize" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fVP-Jt-Rsa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87x-iy-IAF" customClass="chartViewController" customModule="carbonize" customModuleProvider="target">
+                                <rect key="frame" x="10" y="45" width="391" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="87x-iy-IAF" secondAttribute="height" multiplier="1:1" constant="-9" id="LAR-wf-qN1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-Ok-pwg">
+                                <rect key="frame" x="134" y="801" width="158" height="30"/>
+                                <state key="normal" title="Display Graph "/>
+                                <connections>
+                                    <action selector="displayChart:" destination="oLM-Sy-MFU" eventType="touchUpInside" id="ane-XU-uJF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="7S6-Ok-pwg" firstAttribute="leading" secondItem="W0R-9C-PlA" secondAttribute="leading" constant="134" id="5b1-Wp-SUU"/>
+                            <constraint firstItem="87x-iy-IAF" firstAttribute="top" secondItem="W0R-9C-PlA" secondAttribute="top" constant="1" id="HPu-6H-Eyv"/>
+                            <constraint firstItem="87x-iy-IAF" firstAttribute="leading" secondItem="W0R-9C-PlA" secondAttribute="leading" constant="10" id="SBe-us-luq"/>
+                            <constraint firstItem="7S6-Ok-pwg" firstAttribute="centerX" secondItem="fVP-Jt-Rsa" secondAttribute="centerX" constant="6" id="cda-qC-m1b"/>
+                            <constraint firstItem="W0R-9C-PlA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7S6-Ok-pwg" secondAttribute="trailing" symbolic="YES" id="fYN-ip-PgC"/>
+                            <constraint firstItem="7S6-Ok-pwg" firstAttribute="top" secondItem="87x-iy-IAF" secondAttribute="bottom" constant="356" id="gud-fa-YeA"/>
+                            <constraint firstItem="W0R-9C-PlA" firstAttribute="bottom" secondItem="87x-iy-IAF" secondAttribute="bottom" constant="417" id="sT6-9M-spH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W0R-9C-PlA"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0ST-c4-CAj" appends="YES" id="stO-Of-buE"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="jmR-Dc-mdU"/>
+                    <connections>
+                        <outlet property="chartView" destination="87x-iy-IAF" id="UPx-8n-gLh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qF-BF-bdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="0ST-c4-CAj">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="Ucb-lP-w74"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="32" y="-731"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="5zB-pl-dEq">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="e8H-00-6Wb" customClass="imageViewController" customModule="carbonize" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IkO-5T-9L3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZAh-r3-9vc"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="deletePhotoReturn" id="bWO-80-4JF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFf-F3-amv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="-1426"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ucb-lP-w74"/>
+    </inferredMetricsTieBreakers>
+</document>
